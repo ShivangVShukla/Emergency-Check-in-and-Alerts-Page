@@ -1,0 +1,204 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  color: white;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-illustration img {
+  max-width: 250px;
+}
+
+/* Buttons (General) */
+.btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+/* Important Message */
+.important-message {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fefefe;
+  background: rgba(0,0,0,0.2);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Safe & Help Buttons (unchanged, as per your request) */
+.big-btn {
+  padding: 1.2rem 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.safe-btn { background: rgba(0,0,0,0.2); }
+.safe-btn:hover { background:white; color:#2563eb; }
+
+.help-btn { background: rgba(0,0,0,0.2); }
+.help-btn:hover { background:white; color:#2563eb; }
+
+.btn.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Alerts Section */
+.alerts {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: #f0f0f0;
+}
+
+.alerts h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a;
+}
+
+.alert-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Quick Alert System Buttons */
+.alert-options .btn {
+  background: #2563eb;   /* blue background */
+  color: #fff;           /* white text */
+  border-radius: 10px;
+  padding: 1rem 1.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.alert-options .btn:hover {
+  background: #4b5563;   /* greyish hover */
+  color: #fff;
+}
+
+/* Resources Dashboard */
+.resources {
+  padding: 2.5rem 2rem;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.resources h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Emergency Resource Cards (same style as quick alert buttons) */
+.resource-card {
+  display: block;
+  padding: 1.5rem;
+  background: #2563eb;   /* blue background */
+  color: #fff;           /* white text */
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.resource-card span {
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: normal;
+  color: #f0f0f0;
+}
+
+.resource-card:hover {
+  background: #4b5563;   /* greyish hover */
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+  margin-top: 20px;
+}
+footer a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    flex-direction: column;
+  }
+  .hero-illustration {
+    margin-top: 1.5rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}

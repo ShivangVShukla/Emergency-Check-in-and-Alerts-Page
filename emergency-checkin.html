@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Check-in & Alerts</title>
+  <link rel="stylesheet" href="emergency-checkin.css"/>
+
+  <!-- Leaflet CSS (optional if map removed) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <!-- Lottie Web -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+<style>
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 40px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-btn {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #f3f4f6;
+    color: #1f2937;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .nav-btn:hover {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .nav-btn.active {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+  }
+</style>
+  <style>
+    /* Lottie container */
+    #lottie-alert {
+      width: 700px;
+      height: 500px;
+      margin: auto;
+    }
+    .lottie-fallback {
+      font-size: 5rem;
+      text-align: center;
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ✅ Modern Header -->
+<header class="navbar">
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-btn">Home</a></li>
+      <li><a href="emergency-checkin.html" class="nav-btn" id="nav-emergency">Emergency</a></li>
+      <li><a href="shelter.html" class="nav-btn">NGO Coordination</a></li>
+      <li><a href="ngo.html" class="nav-btn">Refugee Job</a></li>
+      <li><a href="jobs.html" class="nav-btn">Report</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ✅ Header Styles -->
+
+
+<!-- ✅ Script for Active Button + Lottie Refresh -->
+
+
+  <!-- Hero Section -->
+  <header class="hero">
+  <div class="hero-text">
+    <h1>Emergency Check-in & Alerts</h1>
+    <p class="important-message">
+      In case of any emergency, mark yourself as SAFE or request immediate HELP. 
+      Your response will assist responders in reaching you faster.
+    </p>
+    <div class="hero-buttons">
+      <button class="btn safe-btn big-btn" id="btn-safe">Mark Safe</button>
+      <button class="btn help-btn big-btn" id="btn-help">Need Help</button>
+    </div>
+  </div>
+
+
+    <!-- Lottie Animation -->
+    <div class="hero-illustration">
+      <div id="lottie-alert" aria-label="Emergency alert animation" role="img"></div>
+      <noscript>
+        <div class="lottie-fallback"></div>
+      </noscript>
+    </div>
+  </header>
+
+  <!-- Quick Alert System -->
+  <section class="alerts">
+    <h2>Quick Alert System</h2>
+    <div class="alert-options">
+      <a href="medical-emergency.html" class="btn small">Medical Emergency</a>
+      <a href="shelter-required.html" class="btn small">Shelter Required</a>
+      <a href="food-water.html" class="btn small">Food & Water</a>
+      <a href="security-threat.html" class="btn small">Security Threat</a>
+    </div>
+  </section>
+
+  <!-- Emergency Resources Dashboard -->
+  <section class="resources">
+    <h2>Emergency Resources Dashboard</h2>
+    <div class="resources-grid">
+      <!-- Left side -->
+      <a href="tel:108" class="resource-card">Ambulance<br><span>Call 108</span></a>
+      <a href="tel:101" class="resource-card">Fire<br><span>Call 101</span></a>
+      <!-- Right side -->
+      <a href="tel:100" class="resource-card">Police<br><span>Call 100</span></a>
+      <a href="tel:1098" class="resource-card">Child Helpline<br><span>Call 1098</span></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Stay safe. Together, we can respond faster.</p>
+  </footer>
+
+  <!-- Page JS -->
+  <script src="emergency-checkin.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // highlight active nav button
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+      if (btn.getAttribute("href") === currentPage) {
+        btn.classList.add("active");
+      }
+    });
+
+    // refresh lottie animation on emergency nav click
+    const emergencyBtn = document.getElementById("nav-emergency");
+    if (emergencyBtn) {
+      emergencyBtn.addEventListener("click", function (e) {
+        if (currentPage === "emergency-checkin.html") {
+          e.preventDefault(); // stop reloading the same page
+          location.reload();  // force reload → Lottie runs again
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>

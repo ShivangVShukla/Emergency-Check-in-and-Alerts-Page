@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Emergency Form</title>
+  <link rel="stylesheet" href="medical-emergency.css">
+</head>
+<body>
+
+  <section class="medical-form" id="medical-form">
+    <h2>Medical Emergency Form</h2>
+    <p>If you or someone near you needs urgent medical help, please fill in the details below.</p>
+    
+    <form id="emergencyForm">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Contact Number:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+      </div>
+  
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required placeholder="Enter your location">
+      </div>
+  
+      <div class="form-group">
+        <label for="emergencyType">Type of Emergency:</label>
+        <select id="emergencyType" name="emergencyType" required>
+          <option value="">-- Select --</option>
+          <option value="injury">Serious Injury</option>
+          <option value="heart">Heart Problem</option>
+          <option value="breathing">Breathing Issue</option>
+          <option value="unconscious">Unconsciousness</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="message">Additional Details (optional):</label>
+        <textarea id="message" name="message" rows="4" placeholder="Describe the situation..."></textarea>
+      </div>
+  
+      <button type="submit" class="btn submit-btn">Submit Emergency</button>
+    </form>
+  </section>
+    <script src="medical-emergency.js" defer></script>
+    <footer>
+    <p>Stay safe. Help is on the way.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shelter Required Request</title>
+  <link rel="stylesheet" href="shelter-required.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="hero">
+    <h1>Shelter Assistance Request</h1>
+    <p class="important-message">
+      If you or your group require urgent shelter, please fill in the details below. 
+      This will help responders arrange accommodation and basic necessities for you.
+    </p>
+  </header>
+
+  <!-- Shelter Request Form -->
+  <section class="form-section">
+    <form id="shelterForm">
+      <!-- Full Name -->
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required />
+
+      <!-- Contact Number -->
+      <label for="contact">Contact Number:</label>
+      <input type="tel" id="contact" name="contact" placeholder="Enter contact number" required />
+
+      <!-- Location -->
+      <label for="location">Current Location:</label>
+      <textarea id="location" name="location" rows="3" required></textarea>
+
+      <!-- Number of People -->
+      <label for="peopleCount">Number of People Requiring Shelter:</label>
+      <input type="number" id="peopleCount" name="peopleCount" min="1" required />
+
+
+      <!-- Submit -->
+      <button type="submit" class="btn submit-btn">Request Shelter</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Stay safe. Help is on the way.</p>
+  </footer>
+
+  <script src="shelter-required.js"></script>
+</body>
+</html>
